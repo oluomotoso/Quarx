@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Quarx;
+use Spatie\Analytics\AnalyticsServiceProvider;
 
 class QuarxProvider extends ServiceProvider
 {
@@ -86,7 +87,7 @@ class QuarxProvider extends ServiceProvider
 
         $this->app->register(\Yab\Laracogs\LaracogsProvider::class);
         $this->app->register(\Devfactory\Minify\MinifyServiceProvider::class);
-        $this->app->register(\Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class);
+        $this->app->register(AnalyticsServiceProvider::class);
         $this->app->register(\GrahamCampbell\Markdown\MarkdownServiceProvider::class);
 
         $loader = AliasLoader::getInstance();
